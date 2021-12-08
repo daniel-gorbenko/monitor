@@ -18,10 +18,10 @@ class CMD {
 		$output = null;
 		$retval = null;
 
-		$command = 'git log -n1 --format="%h"';
+		$command = 'git log -n1 --format="%H"';
 
 		exec($command, $output, $retval);
 
-		return $output;
+		return $output[0];
 	}
 }
