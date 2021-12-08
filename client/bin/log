@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . "/../src/CMD.php";
+require __DIR__ . "/../src/Client.php";
+
+$cmd = new Monitor\CMD($argv);
+$monitor = new Monitor\Client(Monitor\Client::getConfig($cmd->getConfig()));
+
+$monitor->log($cmd->getGroupId(), $cmd->getEvent(), $cmd->getFlag());

@@ -1,0 +1,6 @@
+{
+	"application_id": "app.12345",
+	"username": "username.12345",
+	"password": "password.12345",
+	"api_url": "http://monitor/server/"
+}
