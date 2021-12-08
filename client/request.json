@@ -1,0 +1,10 @@
+{
+	"log": {
+		"application_id": "APPLICATION_ID",
+		"group_id": "COMMIT_ID",
+		"author_id": "AUTHOR_ID",
+		"event": "Pushed",
+		"flag": "0|1|2",
+		"datetime": "12.08.2021 10:37:42"
+	}
+}

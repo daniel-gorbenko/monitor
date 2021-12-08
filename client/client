@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+
+require "Client.php";
+
+$monitor = new Monitor\Client('RAKETKA_ID', 12345, 'http://monitor/server');
+
+$commit_id = CMD::getLastCommitID();
+
+$monitor->log($commit_id, 'Pushed', Monitor\Client::FLAG_CREATED);
+$monitor->log($commit_id, 'Deploying');
+$monitor->log($commit_id, 'Deployed', Monitor\Client::FLAG_FINISHED);
+
+
+class CMD {
+	public static function getLastCommitID()
+	{
+		$output = null;
+		$retval = null;
+
+		$command = 'git log -n1 --format="%h"';
+
+		exec($command, $output, $retval);
+
+		return $output;
+	}
+}
