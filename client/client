@@ -5,7 +5,12 @@ require "Client.php";
 
 $monitor = new Monitor\Client('RAKETKA_ID', 12345, 'http://monitor/server');
 
-$commit_id = CMD::getLastCommitID();
+$data = array();
+
+parse_str(implode('&', array_slice($argv, 1)), $data);
+
+var_dump($data);
+exit;
 
 $monitor->log($commit_id, 'Pushed', Monitor\Client::FLAG_CREATED);
 $monitor->log($commit_id, 'Deploying');
